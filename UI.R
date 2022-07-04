@@ -47,7 +47,7 @@ shinyUI(
                  radioButtons("categorical_variable", 
                               "Categorical:", 
                               choices = c("education", "workclass", "sex")),    # add radio buttons for categorical variables
-                 checkboxInput("is_stacked", "bar type", FALSE)     # add check box input for stacked bar chart option
+                 checkboxInput("is_stacked", "stacked bar", FALSE)     # add check box input for stacked bar chart option
                )
         ),
         column(9, 
