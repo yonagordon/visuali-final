@@ -20,14 +20,14 @@ shinyServer(function(input, output) {
   output$p1 <- renderPlot({
     if (input$graph_type == "histogram") {
       # Histogram
-      ggplot(df_country(), aes(x = input$continuous_variable)) +
+      ggplot(df_country(), aes_string(x = input$continuous_variable)) +
         geom_histogram()  # histogram geom
         labs(x=paste("input", input$continuous_variable), y="number of hours") +  # labels
         facet_wrap(.~adult$prediction)   # facet by prediction
     }
     else {
       # Boxplot
-     ggplot(df_country(), aes(y = input$continuous_variable)) +
+     ggplot(df_country(), aes_string(y = input$continuous_variable)) +
         geom_boxplot() +  # boxplot geom
         coord_flip() +  # flip coordinates
         labs(
@@ -42,7 +42,7 @@ shinyServer(function(input, output) {
   # TASK 6: Create logic to plot faceted bar chart or stacked bar chart
   output$p2 <- renderPlot({
     # Bar chart
-    p <- ggplot(df_country(), aes(x = input$categorical_variable)) +
+    p <- ggplot(df_country(), aes_string(x = input$categorical_variable)) +
       geom_bar()+
       labs(x="categorical",
            y="number of people",
