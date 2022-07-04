@@ -1,6 +1,7 @@
 # Load libraries
 library(shiny)
 library(tidyverse)
+load(ggplot2)
 library(plotly)
 
 # Read in data
